@@ -66,13 +66,23 @@ function mode(env){
   }
 }
 
+const alias = {
+  resolve: {
+    alias: {
+      // for example:
+      // util: path.resolve(__dirname, 'src/util/')
+    }
+  }
+}
+
 // Config composition
 
 const common = merge(
   entry,
   loaders,
   htmlPlugin,
-  vuePlugin
+  vuePlugin,
+  alias
 )
 
 const production = merge(
